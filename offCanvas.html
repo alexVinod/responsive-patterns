@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OFFCanvas</title>
+	<script src="scripts/jquery-3.3.1.min.js"></script>
+	<style>
+		.light_blue{
+			background-color: skyblue;
+		}
+		.dark_blue{
+			background-color: navy;
+		}
+		.black{
+			background-color: #263238;
+
+		}
+		html,body,main{
+			height: 100%;
+			width: 100%;
+		}
+		nav{
+			width: 300px;
+			height: 100%;
+			position: absolute;
+			transform: translate(-300px,0);
+			transition: transform 0.3s ease;
+		}
+		nav.open{
+			transform: translate(0,0);
+		}
+		@media screen and (min-width: 600px){
+			nav{
+				position: relative;
+				transform: translate(0,0);
+			}
+			body{
+				display: flex;
+				flex-flow: row nowrap;
+			}
+			main{
+				width: auto;
+				flex-grow: 1;
+			}
+		}
+		.btn{
+			background-color: wheat;
+			border:none;
+			padding: 11px;
+		}
+		.btn:hover{
+			background-color: gold;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+		a{
+			color: #FFF;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("#click").click(function(){
+				menu.addEventListener("click",function(e){
+					drawer.classList.toggle('open');
+					e.stopPropagation();
+				});	
+			})
+
+			$(".drawer").css("color","honeydew");
+			$(".light_blue").css("color","honeydew");		
+		});	
+
+	</script>
+</head>
+<body>
+	<nav id="drawer" class="black">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Success Story</a></li>
+		</ul>		
+	</nav>
+
+	<main class="light_blue" id="menu">
+		<button id="click" class="btn">&#8801;</button><br>
+		For Showing SideBar You Click on <b>&#8801;</b>. upto Some Extent
+		<p>kjshkldjlk rt6y r6</p>		
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <marquee onmouseover="this.stop()" onmouseleave="this.start()">Catch me if you can..</marquee> -->
